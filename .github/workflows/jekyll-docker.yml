@@ -1,10 +1,13 @@
 name: Jekyll site CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
-on: workflow_dispatch
- 
 jobs:
-  build1name:
-    name: usesr
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -15,14 +18,4 @@ jobs:
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
     - name: My code
-      run: |
-        echo hello,world
-        data
-  build-on-windows:
-     runs-on: windows-latest
-     
-     steps:
-     - name: run mulitple code
-        run:|
-        echo"hello,windoes"
-        Get-date
+      run: echo hello,world
