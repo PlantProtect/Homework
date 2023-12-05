@@ -1,14 +1,10 @@
 name: Jekyll site CI
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+on: workflow_dispatch
+ 
 jobs:
   build1name:
-
+    name: usesr
     runs-on: ubuntu-latest
 
     steps:
