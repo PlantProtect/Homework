@@ -7,16 +7,21 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build1name:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
     - name: My code
-      run: echo hello,world
+      run: |
+        echo hello,world
+        data
+  build-on-windows:
+     runs-on: windows-latest
+     
+     steps:
+     - name: run mulitple code
+        run:|
+        echo"hello,windoes"
+        Get-date
